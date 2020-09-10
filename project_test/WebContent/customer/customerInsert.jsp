@@ -9,7 +9,7 @@
 <body>
 <h3> 회원가입 </h3>
 <form method="post" name="frm"
-		id="frm" action="customerInsert">
+		id="frm" action="${pageContext.request.contextPath}/customerInsert.do">
 	<div>
 		<label for="id">id</label>
 		<input type="text" id="id" name="id"> 

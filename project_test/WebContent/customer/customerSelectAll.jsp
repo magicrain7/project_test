@@ -9,6 +9,8 @@
 </head>
 <body>
 <h3>전체회원</h3>
+<form method="post" name="frm"
+		id="frm" action="${pageContext.request.contextPath}/customerInsert.do">
 <table id = "customer" border="1">
 	<tr>
 		<th>id</th>
@@ -32,5 +34,6 @@
 	</c:forEach>
 	
 </table>
+</form>
 </body>
 </html>
