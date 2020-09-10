@@ -1,4 +1,4 @@
-package customerRaservation;
+package com.dev.model;
 
 public class CustomerReservationVO {
 	private Integer r_number;
@@ -9,10 +9,7 @@ public class CustomerReservationVO {
 	private Integer online_pay; 
 	//참조키고객번호 디자이너번호
 	
-	
-	
-	
-	
+
 	@Override
 	public String toString() {
 		return "CustomerReservationVO [r_number=" + r_number + ", r_date=" + r_date + ", show_number=" + show_number

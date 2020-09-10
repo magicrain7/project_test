@@ -1,13 +1,8 @@
-package designer;
+package com.dev.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-
-import common.ConnectionManager;
-import customer.CustomerVO;
-import designer.DesignerDAO;
 
 public class DesignerDAO {
 	//전역변수, 모든 메서드에서 공통으로 사용되는 변수

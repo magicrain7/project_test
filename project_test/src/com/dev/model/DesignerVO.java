@@ -1,4 +1,4 @@
-package designer;
+package com.dev.model;
 
 public class DesignerVO {
 	private String d_id;

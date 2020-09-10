@@ -1,14 +1,11 @@
-package customer;
+package com.dev.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-
-import common.ConnectionManager;
-import customer.CustomerVO;
-
+import com.dev.common.ConnectionManager;
 
 
 public class CustomerDAO {
@@ -26,13 +23,13 @@ public class CustomerDAO {
 	}
 	
 	//전체조회
-		public ArrayList<CustomerVO> selectAll(CustomerVO customerVO) {
+		public ArrayList<CustomerVO> selectAll( ) {
 			CustomerVO resultVO = null;
 			ResultSet rs = null; // 초기화
 			ArrayList<CustomerVO> list = new ArrayList<CustomerVO>();
 			try {
 				conn = ConnectionManager.getConnnect();
-				String sql = " SELECT * FROM MEMBER ORDER BY ID";
+				String sql = " SELECT * FROM customer ORDER BY ID";
 				pstmt = conn.prepareStatement(sql);
 				//pstmt.setInt(1,MemberVO.getDepartment_id()); sql문에 물음표 없어서 set도 필요없음.
 				rs = pstmt.executeQuery(); 
@@ -62,7 +59,7 @@ public class CustomerDAO {
 
 			try {
 				conn = ConnectionManager.getConnnect();
-				String sql = " SELECT * FROM MEMBER WHERE ID= ?";
+				String sql = " SELECT * FROM customer WHERE ID= ?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1,customerVO.getC_id());
 				rs = pstmt.executeQuery(); 
@@ -88,4 +85,36 @@ public class CustomerDAO {
 			return resultVO;
 			
 		}
+		
+		//insert
+		public int insert(CustomerVO customerVO) {
+			try {
+				//1.DB연결
+				conn = ConnectionManager.getConnnect();
+				//2.SQL 구문 실행
+				String sql = "INSERT INTO CUSTOMER(c_id , email, name, phone, birth, gender ,address)" 
+							+ "VALUES (?, ?, ?, ?, sysdate , ?, ?  )";
+			    pstmt = conn.prepareStatement(sql); //예외처리
+				pstmt.setString(1, customerVO.getC_id());
+				pstmt.setString(2, customerVO.getPw());
+				pstmt.setString(3, customerVO.getEmail());
+				pstmt.setString(4, customerVO.getName());
+				pstmt.setString(5, customerVO.getPhone());
+				pstmt.setString(6, customerVO.getBirth());
+				pstmt.setString(7, customerVO.getGender());
+				pstmt.setString(8, customerVO.getAddress());
+				int r = pstmt.executeUpdate();
+				//3.결과 처리
+				System.out.println(r + " 건이 처리됨");
+				
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				//4. 연결해제(DB에 접속 session수는 제한적 그래서 해제해야됨)
+				ConnectionManager.close(conn);
+				
+			}
+			return 0;
+		}
+		
 }

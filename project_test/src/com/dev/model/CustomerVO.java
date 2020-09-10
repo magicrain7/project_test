@@ -1,4 +1,4 @@
-package customer;
+package com.dev.model;
 
 public class CustomerVO {
 	private String c_id;
@@ -9,8 +9,6 @@ public class CustomerVO {
 	private String birth;
 	private String gender;
 	private String address;
-	
-	
 	
 	
 	public CustomerVO(String c_id, String pw, String email, String name, String phone, String birth, String gender,
