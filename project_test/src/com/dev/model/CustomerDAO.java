@@ -29,7 +29,7 @@ public class CustomerDAO {
 			ArrayList<CustomerVO> list = new ArrayList<CustomerVO>();
 			try {
 				conn = ConnectionManager.getConnnect();
-				String sql = " SELECT * FROM customer ORDER BY ID";
+				String sql = " SELECT * FROM CUSTOMER ORDER BY ID";
 				pstmt = conn.prepareStatement(sql);
 				//pstmt.setInt(1,MemberVO.getDepartment_id()); sql문에 물음표 없어서 set도 필요없음.
 				rs = pstmt.executeQuery(); 

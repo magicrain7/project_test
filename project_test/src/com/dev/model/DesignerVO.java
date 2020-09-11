@@ -1,7 +1,7 @@
 package com.dev.model;
 
 public class DesignerVO {
-	private String d_id;
+	private String id;
 	private String phone;
 	private String email;
 	private String pw;
@@ -10,11 +10,10 @@ public class DesignerVO {
 	private String workend;
 	
 	
-	
-	public DesignerVO(String d_id, String phone, String email, String pw, String holiday, String workstart,
+	public DesignerVO(String id, String phone, String email, String pw, String holiday, String workstart,
 			String workend) {
 		super();
-		this.d_id = d_id;
+		this.id = id;
 		this.phone = phone;
 		this.email = email;
 		this.pw = pw;
@@ -22,17 +21,19 @@ public class DesignerVO {
 		this.workstart = workstart;
 		this.workend = workend;
 	}
-	
+	public DesignerVO() {
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
-		return "Designer [d_id=" + d_id + ", phone=" + phone + ", email=" + email + ", pw=" + pw + ", holiday="
-				+ holiday + ", workstart=" + workstart + ", workend=" + workend + "]";
+		return "DesignerVO [id=" + id + ", phone=" + phone + ", email=" + email + ", pw=" + pw + ", holiday=" + holiday
+				+ ", workstart=" + workstart + ", workend=" + workend + "]";
 	}
-	public String getD_id() {
-		return d_id;
+	public String getId() {
+		return id;
 	}
-	public void setD_id(String d_id) {
-		this.d_id = d_id;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getPhone() {
 		return phone;
@@ -70,6 +71,7 @@ public class DesignerVO {
 	public void setWorkend(String workend) {
 		this.workend = workend;
 	}
+	
 	
 	
 	

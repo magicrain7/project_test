@@ -31,13 +31,13 @@ public class FrontController extends HttpServlet {
 		list = new HashMap<String, Controller>();
 		list.put("/customerInsert.do", new CustomerInsertController());
 		list.put("/customerSelectAll.do", new CustomerListController());
-		list.put("/", new DesignerListController());
-
+		list.put("/designerInsert.do", new DesignerInsertController());
+		list.put("/designerSelectAll.do", new DesignerListController());
 	}
 	
 	public FrontController() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
