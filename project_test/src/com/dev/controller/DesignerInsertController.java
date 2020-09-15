@@ -36,7 +36,7 @@ public class DesignerInsertController implements Controller{
 		int r = DesignerDAO.getInstance().insert(designer);
 		
 		request.setAttribute("cnt", designer);
-		request.getRequestDispatcher("/shop/mainPage.jsp").forward(request, response);
+		request.getRequestDispatcher("/designerSelectAll.do").forward(request, response);
 		//리다이렉트 ? designerSelectAll
 	}
 
