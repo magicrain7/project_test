@@ -32,6 +32,8 @@ public class FrontController extends HttpServlet {
 		list.put("/designerInsertForm.do", new DesignerInsertFormController());
 		list.put("/designerInsert.do", new DesignerInsertController());
 		list.put("/designerSelectAll.do", new DesignerListController());
+		list.put("/designerDelete.do", new DesignerDeleteController());
+		list.put("/designerSearch.do", new DesignerSearchController());
 	}
 	
 	public FrontController() {

@@ -27,6 +27,7 @@ body {
 
 /* Style the topnav links */
 .topnav a {
+font-size: 16;
   float: left;
   display: block;
   color: #f2f2f2;
@@ -43,7 +44,7 @@ body {
   <a href="${pageContext.request.contextPath}/designerInsertForm.do">회원가입</a>
   <a href="${pageContext.request.contextPath}/designerSelectAll.do">조회</a>
   <a href="#">수정</a>
-  <a href="#">삭제</a>
+  <a href="${pageContext.request.contextPath}/designerDelete.do">삭제</a>
 </div>
 
 

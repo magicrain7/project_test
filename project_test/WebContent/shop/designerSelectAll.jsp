@@ -7,34 +7,36 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
+th { width: 80px; background-color: #ddd; }
+th:first-child { border-radius: 10px 0 0 0; }
+th:last-child { border-radius: 0 10px 0 0; }
+tr { border-top: 1px solid black; border-bottom: 1px solid black; }
+tr:nth-child(odd) { background-color: #cce4ff; }
+tr:nth-child(even) { background-color: #e6f1ff; }
+tr:hover { background-color: #ffc5c2; cursor: pointer; }
+td { padding: 3px; }
 
-a{
-    color: inherit;
-    text-decoration: none;
+.button {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+border-radius: 5px;
 }
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+.button:hover {
+    background-color: blue;
 }
 </style>
 </head>
 <body>
-	<h3>디자이너 목록</h3>
-	<table class="designer" border="1">
+	<h1>디자이너 목록</h1>
+	<table class="designer" >
 		<tr>
 			<th>아이디</th>
 			<th>폰번호</th>
@@ -55,6 +57,6 @@ table {
 		</c:forEach>
 	</table>
 
-	<div><button type="button" onclick="location.href='shop/index.jsp'">메인페이지로</button></div>
+	<div><button class ="button" type="button" onclick="location.href='shop/index.jsp'">메인페이지로</button></div>
 </body>
 </html>

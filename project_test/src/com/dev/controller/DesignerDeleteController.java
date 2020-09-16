@@ -20,6 +20,9 @@ public class DesignerDeleteController implements Controller{
 		designer.setId(id);
 		
 		int r = DesignerDAO.getInstance().delete(designer);
+		request.setAttribute("cnt", r);
+		
+		request.getRequestDispatcher("/shop/designerDelete.jsp").forward(request, response);
 		
 	}
 
