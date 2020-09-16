@@ -32,7 +32,6 @@ public class DesignerDAO {
 			conn = ConnectionManager.getConnnect();
 			String sql = " SELECT * FROM DESIGNER ORDER BY ID ";
 			pstmt = conn.prepareStatement(sql);
-			// pstmt.setInt(1,MemberVO.getDepartment_id()); sql문에 물음표 없어서 set도 필요없음.
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				resultVO = new DesignerVO();
@@ -54,14 +53,14 @@ public class DesignerDAO {
 
 	}
 
-	public DesignerVO selectOne(DesignerVO memberVO) {
+	public DesignerVO selectOne(DesignerVO designerVO) {
 		DesignerVO resultVO = null;
 
 		try {
 			conn = ConnectionManager.getConnnect();
 			String sql = " SELECT * FROM Designer WHERE ID= ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, memberVO.getId());
+			pstmt.setString(1, designerVO.getId());
 			rs = pstmt.executeQuery();
 			if (rs.next()) { // 처음 커서 위치는 BOF
 				resultVO = new DesignerVO();
