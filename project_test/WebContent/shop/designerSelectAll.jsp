@@ -6,6 +6,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+</style>
 </head>
 <body>
 	<h3>디자이너 목록</h3>
@@ -29,5 +54,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+
+	<div><button type="button" onclick="location.href='shop/index.jsp'">메인페이지로</button></div>
 </body>
 </html>

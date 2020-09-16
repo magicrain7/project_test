@@ -77,4 +77,22 @@ public class DesignerDAO {
 		return 0;
 
 	}
+	
+	public int delete(DesignerVO designerVO) {
+		try {
+			conn = ConnectionManager.getConnnect();
+			String sql = "DELETE FROM MEMBER WHERE ID = ?";
+			pstmt = conn.prepareStatement(sql);
+			//pstmt.setString(1, MemberVO.getDepartment_name());
+			pstmt.setString(1, designerVO.getId());
+			int r = pstmt.executeUpdate();
+			System.out.println(r + " 건이 삭제됨");
+			
+		} catch (Exception e){
+			e.printStackTrace();
+		} finally {
+			ConnectionManager.close(null, pstmt, conn);
+		}
+		return 0;
+	} 
 }
